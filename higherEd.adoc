@@ -27,6 +27,7 @@
 *** https://medium.com/coinmonks/time-and-clocks-and-ordering-of-events-in-a-distributed-system-cdd3f6075e73
 *** http://pages.cs.wisc.edu/~remzi/Classes/739/Fall2015/Papers/clocks.pdf <= Lamport '78 +
 *** https://zoo.cs.yale.edu/classes/cs426/2012/lab/bib/fidge88timestamps.pdf <= Timestamps in Message-Passing Systems That Preserve the Partial Ordering +
+*** https://www.youtube.com/watch?v=unLnsRDCZVw <= Example of Event Ordering
 *** The magic(?) of WSO2 Ballerina language for simplifying design of async systems: "Abstractions and syntax for concurrency and network interaction that closely correspond with sequence diagrams, which enable bidirectional mapping of Ballerina source code between text and graphical representation." -- https://thenewstack.io/ballerina-programming-language-revamped-at-1-0/
 
 > https://v1-0.ballerina.io/  <= See "Sequence diagrams for programming" +
