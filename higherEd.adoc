@@ -38,4 +38,4 @@ https://zoo.cs.yale.edu/classes/cs426/2012/lab/bib/fidge88timestamps.pdf <= Time
 *** Important then to represent entities with the same schema in both, a shared data model
 ** How do we find the scope and limits of asynchronous approaches?
 
-https://www.incommon.org/news/incommon-trusted-access-platform-and-incommon-academy-developments-in-software-and-training/
+https://www.incommon.org/news/incommon-trusted-access-platform-and-incommon-academy-developments-in-software-and-training/ <= Home page for InCommon Trusted Access Platform and InCommon Academy
