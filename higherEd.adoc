@@ -10,7 +10,7 @@
 * TAP/midPoint Functional Overlap
 ** Our current direction:
 *** mP handles Identity Management
-*** Grouper as Auth. system for roles, orgs, entitlements, services
+*** Grouper as Authoritative system for roles, orgs, entitlements, services
 *** Grouper as Admin Point and Distributor of AM policy
 *** mP receives AM information and policies from Grouper
 *** mP as (de-)provisioning and synchronization engine
