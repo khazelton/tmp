@@ -32,6 +32,6 @@
 
 ** Likely that HTTP APIs and Async Messaging will co-exist in hybrid environments
 *** Important then to represent entities with the same schema in both, a shared data model
-** How do we find the scope and limits of this approach?
+** How do we find the scope and limits of asynchronous approaches?
 
 https://www.incommon.org/news/incommon-trusted-access-platform-and-incommon-academy-developments-in-software-and-training/
