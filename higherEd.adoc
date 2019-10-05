@@ -1,0 +1,31 @@
+=== mPhigherEd.adoc
+
+==== Grouper, midPoint and Event-Driven Architecture
+===== midPoint, Internet2, InCommon, "InCommon Trusted Access Platform"
+
+* Intro to Grouper--The AM in InC TAP
+** Grouper expects a pre-existing source of subjects (the I in IAM)
+* InCommon Trusted Access Platform
+** Promoting Adoption
+* TAP/midPoint Functional Overlap
+** Our current direction:
+*** mP handles Identity Management
+*** Grouper as Auth. system for roles, orgs, entitlements, services
+*** Grouper as Admin Point and Distributor of AM policy
+*** midPoint receives AM information and policies from Grouper
+*** mP as (de-)provisioning and synchronization engine
+
+* Grouper/midPoint Integration Project--An I2/Evolveum collaboration
+** Asynch approach for live sync (New development work)
+*** AMQP protocol via RabbitMQ (0.9.1)
+*** AMQP Topic naming conventions support the mapping from Grouper to mP data structures
+** Full Reconciliation supported in more traditional ways
+
+* Future of Async for provisioning/de-provisioning in TAP--A Research Question
+** Attractions: Loose coupling: New subscribers come along, no direct impact or changes to mP as publisher
+** Challenges of "eventual consistency"--Humans need a mental picture of how it works; concurrent systems are not easy to reason about
+** Likely that HTTP APIs and Async Messaging will co-exist in hybrid environments
+*** Important then to represent entities with the same schema in both, a shared data model
+** How do we find the scope and limits of this approach?
+
+https://www.incommon.org/news/incommon-trusted-access-platform-and-incommon-academy-developments-in-software-and-training/
