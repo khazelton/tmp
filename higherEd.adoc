@@ -26,11 +26,9 @@
 ** Challenges of "eventual consistency"--Humans need a mental picture of how it works; concurrent systems are not easy to reason about
 *** The magic(?) of WSO2 Ballerina language for simplifying design of async systems: 
 
-```
 > https://v1-0.ballerina.io/  See sequence diagrams for programming +
 > https://github.com/ballerina-platform/ballerina-lang +
 > https://v1-0.ballerina.io/learn/by-example/ +
-```
 
 ** Likely that HTTP APIs and Async Messaging will co-exist in hybrid environments
 *** Important then to represent entities with the same schema in both, a shared data model
