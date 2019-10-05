@@ -3,8 +3,8 @@
 ==== Grouper, midPoint and Event-Driven Architecture
 ===== midPoint, Internet2, InCommon, "InCommon Trusted Access Platform"
 
-* Intro to Grouper--The AM in InC TAP
-** Grouper expects a pre-existing source of subjects (the I in IAM)
+* Intro to Grouper--The "AM" in InC TAP
+** Grouper expects a pre-existing source of subjects (the "I" in IAM)
 * InCommon Trusted Access Platform
 ** Promoting Adoption
 * TAP/midPoint Functional Overlap
