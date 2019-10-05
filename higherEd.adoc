@@ -1,4 +1,4 @@
-=== mPhigherEd.adoc
+=== mPhigherEd.adoc  http://j.mp/mPhigherEd
 
 ==== Grouper, midPoint and Event-Driven Architecture
 ===== midPoint, Internet2, InCommon, "InCommon Trusted Access Platform"
@@ -24,6 +24,7 @@
 * Future of Async for provisioning/de-provisioning in TAP--A Research Question
 ** Attractions: Loose coupling: New subscribers come along, no direct impact or changes to mP as publisher
 ** Challenges of "eventual consistency"--Humans need a mental picture of how it works; concurrent systems are not easy to reason about
+*** The magic(?) of WSO2 Ballerina language for simplifying design of async systems: https://v1-0.ballerina.io/ 
 ** Likely that HTTP APIs and Async Messaging will co-exist in hybrid environments
 *** Important then to represent entities with the same schema in both, a shared data model
 ** How do we find the scope and limits of this approach?
