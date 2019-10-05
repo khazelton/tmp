@@ -28,14 +28,14 @@
 *** http://pages.cs.wisc.edu/~remzi/Classes/739/Fall2015/Papers/clocks.pdf <= Lamport '78 +
 *** https://zoo.cs.yale.edu/classes/cs426/2012/lab/bib/fidge88timestamps.pdf <= Timestamps in Message-Passing Systems That Preserve the Partial Ordering +
 *** https://www.youtube.com/watch?v=unLnsRDCZVw <= Example of Event Ordering
-*** The magic(?) of WSO2 Ballerina language for simplifying design of async systems: "Abstractions and syntax for concurrency and network interaction that closely correspond with sequence diagrams, which enable bidirectional mapping of Ballerina source code between text and graphical representation." -- https://thenewstack.io/ballerina-programming-language-revamped-at-1-0/
+*** The magic(?) of WSO2 Ballerina Language 1.0 for simplifying design of async systems: "Abstractions and syntax for concurrency and network interaction that closely correspond with sequence diagrams, which enable bidirectional mapping of Ballerina source code between text and graphical representation." -- https://thenewstack.io/ballerina-programming-language-revamped-at-1-0/
 
 > https://v1-0.ballerina.io/  <= See "Sequence diagrams for programming" +
 > https://github.com/ballerina-platform/ballerina-lang +
 > https://v1-0.ballerina.io/learn/by-example/ +
 
 ** Likely that HTTP APIs and Async Messaging will co-exist in hybrid environments
-*** Important then to represent entities with the same schema in both, a shared data model
+*** representation of entities using the same schema for API response objects and message body based on a shared data model
 ** How do we find the scope and limits of asynchronous approaches?
 
 https://www.incommon.org/news/incommon-trusted-access-platform-and-incommon-academy-developments-in-software-and-training/ <= Home page for InCommon Trusted Access Platform and InCommon Academy
