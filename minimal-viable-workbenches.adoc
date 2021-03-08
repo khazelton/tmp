@@ -1,0 +1,29 @@
+
+*Two Minimal Viable Workbenches (MVWs)*
+(essentially simplified versions of existing CSP workbench)
+```
+1) COm + subjSource + Grouper + Shib
+or
+2) mP  + subjSource + Grouper + Shib
+
+Configuration option to include a set of pre-populated person entities, or not
+
+That would already be enough to demonstrate IAM features up to provisioning access policies for Grouper users
+```
+
+*Logical first step beyond MVW*
+
+```
+Wire a System of Record to COm or mP
+1) TAP-provided mock SIS and/or HR
+or
+2) Real SoR selected by campus, an SOR with which TAP has previously integrated
+Allows for full-fledged lifecycle management and access policies
+```
+
+*Logical second step beyond MVW*
+
+```
+Set up (de-)provisioning to a campus system or service that TAP knows how to integrate
+using COmanage, Grouper, and/or midPoint as provisioning engine
+```
