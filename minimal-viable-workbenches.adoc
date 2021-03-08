@@ -18,7 +18,7 @@ Wire a System of Record to COm or mP
 1) TAP-provided mock SIS and/or HR
 or
 2) Real SoR selected by campus, an SOR with which TAP has previously integrated.
-Allows for full-fledged lifecycle management and access policies
+Allows for full-fledged lifecycle management and access policy definition and enforcement
 ```
 
 *Logical second step beyond MVW*
