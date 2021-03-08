@@ -27,3 +27,6 @@ Allows for full-fledged lifecycle management and access policy definition and en
 Set up (de-)provisioning to a campus system or service with which TAP knows how to integrate
 using COmanage, Grouper, and/or midPoint as provisioning engine
 ```
+
+*Augment MVP.2 to include COmanage as a system of record for guests*
+
