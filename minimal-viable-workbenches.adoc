@@ -17,7 +17,7 @@ That would already be enough to demonstrate IAM features up to provisioning acce
 Wire a System of Record to COm or mP
 1) TAP-provided mock SIS and/or HR
 or
-2) Real SoR selected by campus, an SOR with which TAP has previously integrated
+2) Real SoR selected by campus, an SOR with which TAP has previously integrated.
 Allows for full-fledged lifecycle management and access policies
 ```
 
