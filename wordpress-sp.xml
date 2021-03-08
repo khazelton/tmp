@@ -1,4 +1,4 @@
-<md:EntityDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata" ID="_9d0ae95ee88f2396b39d245b74751e04b8508425" entityID="https://wordpressdemo/shibboleth">
+<md:EntityDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata" ID="_9d0ae95ee88f2396b39d245b74751e04b8508425" entityID="https://aktis.org/wordpressdemo/shibboleth">
 
   <md:Extensions xmlns:alg="urn:oasis:names:tc:SAML:metadata:algsupport">
     <alg:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/>
