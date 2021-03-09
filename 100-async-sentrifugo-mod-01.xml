@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!---->
+<objects xmlns="http://midpoint.evolveum.com/xml/ns/public/common/common-3"
+	xmlns:c="http://midpoint.evolveum.com/xml/ns/public/common/common-3"
+	xmlns:org="http://midpoint.evolveum.com/xml/ns/public/common/org-3">  
+    <!---->
+	<resource 
+        xmlns="http://midpoint.evolveum.com/xml/ns/public/common/common-3" xmlns:c="http://midpoint.evolveum.com/xml/ns/public/common/common-3" xmlns:icfs="http://midpoint.evolveum.com/xml/ns/public/connector/icf-1/resource-schema-3" xmlns:org="http://midpoint.evolveum.com/xml/ns/public/common/org-3" xmlns:q="http://prism.evolveum.com/xml/ns/public/query-3" xmlns:ri="http://midpoint.evolveum.com/xml/ns/public/resource/instance-3" xmlns:t="http://prism.evolveum.com/xml/ns/public/types-3"
+	  oid="732fe695-5d67-4041-a9ad-f4ec2843986c" version="36">
+
+    <!---->
+    <name>async-sentrifugo</name>
+    <!---->
+    <operationalState>
+        <lastAvailabilityStatus>up</lastAvailabilityStatus>
+    </operationalState>
+    <!---->
+     <connectorRef type="c:ConnectorType">
+            <filter>
+                <q:equal>
+                    <q:path>connectorType</q:path>
+                    <q:value>AsyncUpdateConnector</q:value>
+                </q:equal>
+            </filter>
+        </connectorRef>
+<!---->
+    <connectorConfiguration 
+        <!---->
+        xmlns:gen721="http://midpoint.evolveum.com/xml/ns/public/connector/builtin-1/bundle/com.evolveum.midpoint.provisioning.ucf.impl.builtin.async/AsyncUpdateConnector" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:c="http://midpoint.evolveum.com/xml/ns/public/common/common-3" xsi:type="c:ConnectorConfigurationType">
+        <gen721:sources>
+            <amqp091>
+                <uri xmlns:q="http://prism.evolveum.com/xml/ns/public/query-3">amqp://mq:5672</uri>
+                <username>guest</username>
+                <password>guest</password>
+                <queue>sor_person</queue>
+            </amqp091>
+        </gen721:sources>
+        <!---->
+        <gen721:transformExpression>
+            <script xmlns:c="http://midpoint.evolveum.com/xml/ns/public/common/common-3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="c:ScriptExpressionEvaluatorType">
+                <trace>true</trace>
+                <code xmlns:t="http://prism.evolveum.com/xml/ns/public/types-3">
+                        // ------------------ START OF CONFIGURATION ------------------
+
+                        parameters = [:]
+                        //    groupIncludePattern: [ 'app:.*', 'test:.*', 'ref:.*' ],
+                        //    groupExcludePattern: [ '.*_(includes|excludes|systemOfRecord|systemOfRecordAndIncludes)' ],
+                        //    relevantSourceId: 'ldap'
+                        //]
+
+                        // ------------------ END OF CONFIGURATION ------------------
+
+                        parameters.put('message', message)
+                        sentrifugo.execute('createUcfChange', parameters)
+                    </code>
+            </script>
+        </gen721:transformExpression>
+        <!---->
+        <gen721:processTracingConfiguration>
+            <interval>1</interval>
+        </gen721:processTracingConfiguration>
+    </connectorConfiguration>
+<!---->
+    <schema>
+        <cachingMetadata>
+            <retrievalTimestamp>2020-04-20T16:31:07.432Z</retrievalTimestamp>
+            <serialNumber>b5f4858a408b9c66-ea02d1f2a4f48fdc</serialNumber>
+        </cachingMetadata>
+        <!---->
+        <definition>
+            <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+            xmlns:a="http://prism.evolveum.com/xml/ns/public/annotation-3" 
+            xmlns:ra="http://midpoint.evolveum.com/xml/ns/public/resource/annotation-3" 
+            xmlns:tns="http://midpoint.evolveum.com/xml/ns/public/resource/instance-3" elementFormDefault="qualified" 
+            targetNamespace="http://midpoint.evolveum.com/xml/ns/public/resource/instance-3" xmlns:icfs="http://midpoint.evolveum.com/xml/ns/public/connector/icf-1/resource-schema-3">
+                <xsd:import namespace="http://prism.evolveum.com/xml/ns/public/annotation-3"/>
+                <xsd:import namespace="http://midpoint.evolveum.com/xml/ns/public/connector/icf-1/resource-schema-3"/>
+                <xsd:import namespace="http://midpoint.evolveum.com/xml/ns/public/resource/annotation-3"/>
+                <!---->
+                <xsd:complexType name="Account">
+                    <xsd:annotation>
+                        <xsd:appinfo>
+                            <ra:resourceObject/>
+                            <ra:identifier>uid</ra:identifier>
+                            <tns:identifier>ri:uid</tns:identifier>
+                            <ra:secondaryIdentifier>email</ra:secondaryIdentifier>
+                            <ra:displayNameAttribute>ri:email</ra:displayNameAttribute>
+                            <ra:namingAttribute>ri:email</ra:namingAttribute>
+
+                             <ra:nativeObjectClass>__ACCOUNT__</ra:nativeObjectClass>
+                            <account/>
+                        </xsd:appinfo>
+                    </xsd:annotation>
+                    <xsd:sequence>
+                        <xsd:element minOccurs="0" name="givenName" type="xsd:string">
+                            <xsd:annotation>
+                                <xsd:appinfo>
+                                    <a:displayOrder>280</a:displayOrder>
+                                    <ra:frameworkAttributeName>givenName</ra:frameworkAttributeName>
+                                </xsd:appinfo>
+                            </xsd:annotation>
+                        </xsd:element>
+                        <xsd:element name="uid" type="xsd:string">
+                            <xsd:annotation>
+                                <xsd:appinfo>
+                                    <a:displayOrder>280</a:displayOrder>
+
+                                    <ra:nativeAttributeName>sourceId</ra:nativeAttributeName>
+                                    <ra:frameworkAttributeName>__UID__</ra:frameworkAttributeName>
+                                </xsd:appinfo>
+                            </xsd:annotation>
+                        </xsd:element>
+                        <xsd:element minOccurs="0" name="familyName" type="xsd:string">
+                            <xsd:annotation>
+                                <xsd:appinfo>
+                                    <a:displayOrder>290</a:displayOrder>
+                                    <ra:frameworkAttributeName>familyName</ra:frameworkAttributeName>
+                                </xsd:appinfo>
+                            </xsd:annotation>
+                        </xsd:element>
+                        <xsd:element name="email" type="xsd:string">
+                            <xsd:annotation>
+                                <xsd:appinfo>
+                                    <a:displayOrder>200</a:displayOrder>
+                                    <ra:frameworkAttributeName>email</ra:frameworkAttributeName>
+                                    <ra:frameworkAttributeName>__NAME__</ra:frameworkAttributeName>
+                                </xsd:appinfo>
+                            </xsd:annotation>
+                        </xsd:element>
+
+
+                    </xsd:sequence>
+                </xsd:complexType>
+                <!---->
+            </xsd:schema>
+            <!---->
+        </definition>
+        <!---->
+    </schema>
+<!---->
+    <schemaHandling>
+        <!---->
+        <objectType id="5">
+            <kind>account</kind>
+            <intent>default</intent>
+            <default>true</default>
+            <objectClass>ri:Account</objectClass>
+            <attribute id="7">
+                <c:ref xmlns:ri="http://midpoint.evolveum.com/xml/ns/public/resource/instance-3">ri:givenName</c:ref>
+                <inbound id="15">
+                    <target>
+                        <c:path>$user/givenName</c:path>
+                    </target>
+                </inbound>
+            </attribute>
+            <!---->
+            <attribute id="9">
+                <c:ref xmlns:ri="http://midpoint.evolveum.com/xml/ns/public/resource/instance-3">ri:familyName</c:ref>
+                <inbound id="17">
+                    <target>
+                        <c:path>$user/familyName</c:path>
+                    </target>
+                </inbound>
+            </attribute>
+            <!---->
+            <attribute id="13">
+                <c:ref xmlns:ri="http://midpoint.evolveum.com/xml/ns/public/resource/instance-3">ri:email</c:ref>
+                <inbound id="21">
+                    <target>
+                        <c:path>$user/emailAddress</c:path>
+                    </target>
+                </inbound>
+                    <inbound>
+                    <strength>strong</strength>
+                    <expression>
+                        <assignmentTargetSearch>
+                            <targetType>RoleType</targetType>
+                            <oid>c89f31dd-8d4f-4e0a-82cb-58ff9d8c1b2f</oid>     <!--  role-ldap-basic -->
+                            <assignmentProperties>
+                                <subtype>grouper-basic</subtype>
+                            </assignmentProperties>
+                        </assignmentTargetSearch>
+                    </expression>
+                    <!---->
+                    <target>
+                        <path>assignment</path>
+                        <set>
+                            <condition>
+                                <script>
+                                    <code>
+                                        assignment.subtype.contains('grouper-basic')
+                                    </code>
+                                </script>
+                            </condition>
+                        </set>
+                    </target>
+                    <!---->
+                </inbound>
+
+            </attribute>
+            <!---->
+            <activation>
+                <administrativeStatus>
+                    <inbound id="22">
+                        <strength>weak</strength>
+                    </inbound>
+                </administrativeStatus>
+            </activation>
+            <!--credentials -->
+            <credentials>
+                <password xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:c="http://midpoint.evolveum.com/xml/ns/public/common/common-3" xsi:type="c:ResourcePasswordDefinitionType">
+                    <inbound>
+                        <strength>weak</strength>
+                        <expression>
+                            <generate xmlns:c="http://midpoint.evolveum.com/xml/ns/public/common/common-3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="c:GenerateExpressionEvaluatorType"/>
+                        </expression>
+                    </inbound>
+                </password>
+            </credentials>
+        </objectType>
+        <!---->
+    </schemaHandling>
+<!---->
+    <capabilities>
+        <cachingMetadata>
+            <retrievalTimestamp>2020-04-20T16:31:07.420Z</retrievalTimestamp>
+            <serialNumber>9184adfd5d683ce0-9b3d21c960000d6b</serialNumber>
+        </cachingMetadata>
+        <native xmlns:cap="http://midpoint.evolveum.com/xml/ns/public/resource/capabilities-3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:c="http://midpoint.evolveum.com/xml/ns/public/common/common-3" xsi:type="c:CapabilityCollectionType">
+        <!---->
+        <cap:asyncUpdate/>
+        </native>
+        <!---->
+        <configured xmlns:cap="http://midpoint.evolveum.com/xml/ns/public/resource/capabilities-3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:c="http://midpoint.evolveum.com/xml/ns/public/common/common-3" xsi:type="c:CapabilityCollectionType">
+            <!---->
+            <cap:testConnection>
+                <cap:enabled>true</cap:enabled>
+            </cap:testConnection>
+            <!---->
+            <cap:delete>
+                <cap:enabled>true</cap:enabled>
+            </cap:delete>
+            <!---->
+            <cap:script>
+                <cap:enabled>true</cap:enabled>
+                <cap:host>
+                    <cap:type>connector</cap:type>
+                </cap:host>
+            </cap:script>
+            <!---->
+            <cap:addRemoveAttributeValues>
+                <cap:enabled>true</cap:enabled>
+            </cap:addRemoveAttributeValues>
+            <!---->
+        </configured>
+        <!---->
+    </capabilities>
+<!---->
+    <caching>
+        <cachingStategy>passive</cachingStategy>
+    </caching>
+<!---->
+    <synchronization>
+        <!---->
+        <objectSynchronization>
+            <enabled>true</enabled>
+            <!---->
+            <correlation>
+                <q:equal>
+                    <q:matching>polyStringNorm</q:matching>
+                    <q:path xmlns:c="http://midpoint.evolveum.com/xml/ns/public/common/common-3">c:emailAddress</q:path>
+                    <expression>
+                        <description>Matches using Name(?)</description>
+                        <path>declare namespace ri="http://midpoint.evolveum.com/xml/ns/public/resource/instance3"; $account/attributes/email
+                        </path>
+                    </expression>
+                </q:equal>
+            </correlation>
+            <!---->
+            <reaction>
+                <situation>linked</situation>
+                <synchronize>true</synchronize>
+                <objectTemplateRef oid="c0c010c0-d34d-b33f-f00d-777222222333"/>
+            </reaction>
+            <!---->
+            <reaction>
+                <situation>deleted</situation>
+                <synchronize>true</synchronize>
+                <action>
+                    <handlerUri>http://midpoint.evolveum.com/xml/ns/public/model/action-3#deleteFocus</handlerUri>
+                </action>
+            </reaction>
+            <!---->
+            <reaction>
+                <situation>unlinked</situation>
+                <synchronize>true</synchronize>
+                <objectTemplateRef oid="c0c010c0-d34d-b33f-f00d-777222222333"/>
+                <action>
+                    <handlerUri>http://midpoint.evolveum.com/xml/ns/public/model/action-3#link</handlerUri>
+                </action>
+            </reaction>
+            <!---->
+            <reaction>
+                <situation>unmatched</situation>
+                <synchronize>true</synchronize>
+                <objectTemplateRef oid="c0c010c0-d34d-b33f-f00d-777222222333"/>
+                <!---->
+                <action>
+                    <handlerUri>http://midpoint.evolveum.com/xml/ns/public/model/action-3#addFocus</handlerUri>
+                </action>
+                <!---->
+            </reaction>
+            <!---->
+        </objectSynchronization>
+        <!---->
+    </synchronization>
+		
+</resource>
+<!---->
+</objects>
