@@ -1,5 +1,5 @@
 
-*Two Minimal Viable Workbenches (MVWs)*
+*Three Minimal Viable Workbenches (MVWs)*
 (essentially simplified versions of existing CSP workbench)
 ```
 1) COm + subjSource + Grouper + Shib
